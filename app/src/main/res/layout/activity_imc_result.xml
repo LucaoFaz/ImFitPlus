@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:clipToPadding="false"
+    tools:context=".ImcResultActivity"
+    >
+
+    <TextView
+        android:id="@+id/nome_imcResult_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Nome da Pessoa"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        />
+    <TextView
+        android:id="@+id/imc_imcResult_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="IMC"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/nome_imcResult_textView"
+        android:layout_marginTop="24dp"
+        />
+    <TextView
+        android:id="@+id/categoriaPreMensagem_imcResult_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Sua categoria IMC é:"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/imc_imcResult_textView"
+        android:layout_marginTop="24dp"
+        />
+
+    <TextView
+        android:id="@+id/categoria_imcResult_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Normal"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaPreMensagem_imcResult_textView"
+        android:layout_marginTop="24dp"
+        />
+
+    <ImageView
+        android:id="@+id/categoria_imcResult_imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="Avatar of a person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoria_imcResult_textView"
+        tools:src="@tools:sample/avatars"
+        android:layout_marginTop="30dp"
+        />
+    
+    <Button
+        android:id="@+id/calcularGastoCalorico_imcResult_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calcular Gasto Calórico"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/voltar_imcResult_button"
+        android:layout_marginBottom="30dp"
+        />
+    <Button
+        android:id="@+id/voltar_imcResult_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        style="?attr/materialButtonOutlinedStyle"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
