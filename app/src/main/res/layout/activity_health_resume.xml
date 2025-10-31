@@ -6,34 +6,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".IdealWeightActivity"
+    tools:context=".HealthResumeActivity"
     >
 
     <TextView
-        android:id="@+id/title_ideal_weight_textView"
+        android:id="@+id/title_healthResume_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Sua Meta de Peso"
+        android:text="Resumo da Saúde"
         android:textAlignment="center"
         android:textSize="28sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         />
 
     <TextView
-        android:id="@+id/real_weight_result_textView"
-        android:layout_width="0dp"
+        android:id="@+id/nome_healthResume_textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:text="Nome"
+        android:textSize="24sp"
         android:layout_marginTop="32dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/title_healthResume_textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_ideal_weight_textView"
-        tools:text="Seu peso atual é:\n80.7 kg" />
+        />
+
+    <TextView
+        android:id="@+id/imc_healthResume_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="IMC"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/nome_healthResume_textView"
+        android:layout_marginTop="24dp"
+        />
+
+    <TextView
+        android:id="@+id/categoriaPreMensagem_imcResult_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Sua categoria IMC é:"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/imc_healthResume_textView"
+        android:layout_marginTop="24dp"
+        />
 
     <TextView
         android:id="@+id/ideal_weight_result_textView"
@@ -41,14 +65,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/real_weight_result_textView"
-        tools:text="Seu peso ideal é:\n70.5 kg" />
+        app:layout_constraintTop_toBottomOf="@+id/categoriaPreMensagem_imcResult_textView"
+        tools:text="Seu peso ideal é:\n70.5 kg"
+        />
 
     <TextView
-        android:id="@+id/weight_difference_textView"
+        android:id="@+id/daily_expenditure_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -57,31 +82,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ideal_weight_result_textView"
-        tools:text="Você precisa perder:\n10.2 kg" />
-
-
-    <Button
-        android:id="@+id/resumo_saude_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Resumo da Saúde"
-        android:textSize="20sp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/voltar_inicio_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Seu Gasto Calórico Diário (GCD) é:\n2200 kcal"
         />
 
-    <Button
-        android:id="@+id/voltar_inicio_button"
-        style="?attr/materialButtonOutlinedStyle"
+    <TextView
+        android:id="@+id/agua_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Voltar ao Início"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_expenditure_textView"
+        tools:text="Quantidade de água: "
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

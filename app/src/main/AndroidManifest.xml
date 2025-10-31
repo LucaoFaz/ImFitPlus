@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ImFitPlus"
         tools:targetApi="31">
         <activity
+            android:name=".HealthResumeActivity"
+            android:exported="false" />
+        <activity
             android:name=".IdealWeightActivity"
             android:exported="false" />
         <activity

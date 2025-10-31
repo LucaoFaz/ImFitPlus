@@ -18,7 +18,7 @@ class ImcResultActivity : AppCompatActivity() {
     private var atividade = ""
     private var sexo = ""
     private var imc = 0.0
-
+    private var categoria = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,7 +43,7 @@ class ImcResultActivity : AppCompatActivity() {
         binding.imcImcResultTextView.text = decimalFormat.format(imc)
 
         //calcular categoria...
-        val categoria = calcularCategoriaImc(imc)
+        categoria = calcularCategoriaImc(imc)
         binding.categoriaImcResultTextView.text = categoria
         val cor = when (categoria) {
             "Abaixo do peso" -> android.graphics.Color.BLUE
@@ -67,6 +67,7 @@ class ImcResultActivity : AppCompatActivity() {
             intent.putExtra("EXTRA_IMC", imc)
             intent.putExtra("EXTRA_SEXO", sexo)
             intent.putExtra("EXTRA_ATIVIDADE", atividade)
+            intent.putExtra("EXTRA_CATEGORIA", categoria)
 
             startActivity(intent)
         }

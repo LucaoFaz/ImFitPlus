@@ -18,6 +18,11 @@ class IdealWeightActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intentRecebido = intent
+        val nome = intentRecebido.getStringExtra("EXTRA_NOME") ?: ""
+        val imc = intentRecebido.getDoubleExtra("EXTRA_IMC", 0.0)
+        val categoria = intentRecebido.getStringExtra("EXTRA_CATEGORIA") ?: ""
+        val gcd = intentRecebido.getDoubleExtra("EXTRA_GASTO_CALORICO", 0.0)
+
         val alturaM = intentRecebido.getDoubleExtra("EXTRA_ALTURA_M", 0.0)
         val pesoAtual = intentRecebido.getDoubleExtra("EXTRA_PESO_ATUAL", 0.0)
 
@@ -44,6 +49,18 @@ class IdealWeightActivity : AppCompatActivity() {
             binding.weightDifferenceTextView.text = "Parabéns! Você está no seu peso ideal!"
         }
 
+        binding.resumoSaudeButton.setOnClickListener {
+            val intentParaResumoSaude = Intent(this, HealthResumeActivity::class.java)
+            intentParaResumoSaude.putExtra("EXTRA_NOME", nome)
+            intentParaResumoSaude.putExtra("EXTRA_IMC", imc)
+            intentParaResumoSaude.putExtra("EXTRA_CATEGORIA", categoria)
+            intentParaResumoSaude.putExtra("EXTRA_GASTO_CALORICO", gcd)
+            intentParaResumoSaude.putExtra("EXTRA_PESO_ATUAL", pesoAtual)
+
+            intentParaResumoSaude.putExtra("EXTRA_PESO_IDEAL", pesoIdeal)
+
+            startActivity(intentParaResumoSaude)
+        }
 
         binding.voltarInicioButton.setOnClickListener {
             //voltar para a primeira tela (WelcomeActivity)

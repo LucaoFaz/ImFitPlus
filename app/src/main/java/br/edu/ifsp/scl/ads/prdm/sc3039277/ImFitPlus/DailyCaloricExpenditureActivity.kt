@@ -17,6 +17,10 @@ class DailyCaloricExpenditureActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intentRecebido = intent
+        val nome = intentRecebido.getStringExtra("EXTRA_NOME") ?: ""
+        val imc = intentRecebido.getDoubleExtra("EXTRA_IMC", 0.0)
+        val categoria = intentRecebido.getStringExtra("EXTRA_CATEGORIA") ?: ""
+        
         val idade = intentRecebido.getIntExtra("EXTRA_IDADE", 0)
         val peso = intentRecebido.getDoubleExtra("EXTRA_PESO", 0.0)
         val alturaCm = intentRecebido.getIntExtra("EXTRA_ALTURA_CM", 0)
@@ -56,9 +60,16 @@ class DailyCaloricExpenditureActivity : AppCompatActivity() {
             val intent = Intent(this, IdealWeightActivity::class.java)
 
             // tela 5 precisa da altura (em metros) e do peso atual
-            val alturaM = alturaCm / 100.0 // Convertemos aqui
+            val alturaM = alturaCm / 100.0
+
+            intent.putExtra("EXTRA_NOME", nome)
+            intent.putExtra("EXTRA_IMC", imc)
+            intent.putExtra("EXTRA_CATEGORIA", categoria)
+            intent.putExtra("EXTRA_GASTO_CALORICO", gcd)
+
             intent.putExtra("EXTRA_ALTURA_M", alturaM)
             intent.putExtra("EXTRA_PESO_ATUAL", peso)
+            
 
             startActivity(intent)
         }
