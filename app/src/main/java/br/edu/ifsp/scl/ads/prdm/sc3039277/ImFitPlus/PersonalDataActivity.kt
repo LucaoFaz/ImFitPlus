@@ -47,10 +47,14 @@ class PersonalDataActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val alturaCm = alturaString.toInt()
-            val altura = alturaCm/100.0
+            val alturaCmDouble = alturaString.replace(',', '.').toDouble()
             val peso = pesoString.replace(',', '.').toDouble()
-            val idade = idadeString.toInt()
+            val idadeDouble = idadeString.replace(',', '.').toDouble()
+
+            val alturaCm = alturaCmDouble.toInt()
+            val idade = idadeDouble.toInt()
+
+            val altura = alturaCm/100.0
             val atividade = binding.nivelAtividadeSpinner.selectedItem.toString()
             val sexoId = binding.sexoRadioGroup.checkedRadioButtonId
             var sexo = "Masculino"
