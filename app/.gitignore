@@ -1,1 +1,13 @@
 /build
+
+# Pastas do IDE
+/.idea/
+.idea/
+
+# Ficheiros de Build
+/build/
+build/
+
+# Ficheiros locais
+*.iml
+local.properties
