@@ -42,6 +42,11 @@ class PersonalDataActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!binding.termosCheckbox.isChecked) {
+                Toast.makeText(this, "Você precisa de aceitar os termos de uso", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val alturaCm = alturaString.toInt()
             val altura = alturaCm/100.0
             val peso = pesoString.toDouble()
