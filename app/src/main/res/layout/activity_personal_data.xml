@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:clipToPadding="false"
+    tools:context=".PersonalDataActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--nome-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nome_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--idade-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idade_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Idade"
+                android:inputType="number"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--altura-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/altura_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Altura em centímetros"
+                android:inputType="number"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--peso-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/peso_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Peso"
+                android:inputType="numberDecimal"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        sexo-->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            />
+        <RadioGroup
+            android:id="@+id/sexo_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/masculino_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                android:checked="true"
+                android:layout_weight="1"
+                />
+
+            <RadioButton
+                android:id="@+id/feminino_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feminino"
+                android:layout_weight="1"
+                />
+        </RadioGroup>
+
+        <!--nivel de atividade-->
+        <TextView
+            id="@+id/nivel_atividade_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nível de atividade"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            />
+        <Spinner
+            android:id="@+id/nivel_atividade_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            />
+
+        <Button
+            android:id="@+id/calcular_imc_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calcular IMC"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            />
+
+    </LinearLayout>
+</ScrollView>
