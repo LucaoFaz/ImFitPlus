@@ -120,6 +120,14 @@
             android:layout_marginTop="4dp"
             />
 
+        <CheckBox
+            android:id="@+id/termos_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Li e aceito os termos de uso"
+            />
+
         <Button
             android:id="@+id/calcular_imc_button"
             android:layout_width="wrap_content"
