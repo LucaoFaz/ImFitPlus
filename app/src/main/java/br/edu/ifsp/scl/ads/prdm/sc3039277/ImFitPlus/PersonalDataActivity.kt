@@ -49,7 +49,7 @@ class PersonalDataActivity : AppCompatActivity() {
 
             val alturaCm = alturaString.toInt()
             val altura = alturaCm/100.0
-            val peso = pesoString.toDouble()
+            val peso = pesoString.replace(',', '.').toDouble()
             val idade = idadeString.toInt()
             val atividade = binding.nivelAtividadeSpinner.selectedItem.toString()
             val sexoId = binding.sexoRadioGroup.checkedRadioButtonId

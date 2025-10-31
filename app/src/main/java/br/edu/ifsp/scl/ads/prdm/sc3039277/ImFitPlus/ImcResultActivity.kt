@@ -45,7 +45,13 @@ class ImcResultActivity : AppCompatActivity() {
         //calcular categoria...
         val categoria = calcularCategoriaImc(imc)
         binding.categoriaImcResultTextView.text = categoria
-
+        val cor = when (categoria) {
+            "Abaixo do peso" -> android.graphics.Color.BLUE
+            "Peso normal" -> android.graphics.Color.GREEN
+            "Sobrepeso" -> android.graphics.Color.YELLOW
+            else -> android.graphics.Color.RED
+        }
+        binding.categoriaImcResultImageView.setBackgroundColor(cor)
 
         binding.voltarImcResultButton.setOnClickListener {
             finish()
