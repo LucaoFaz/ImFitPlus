@@ -6,12 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".HealthResumeActivity"
-    >
+    tools:context=".HealthResumeActivity">
 
     <TextView
         android:id="@+id/title_healthResume_textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Resumo da Saúde"
@@ -20,84 +19,89 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nome_healthResume_textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Nome"
-        android:textSize="24sp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/title_healthResume_textView"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/title_healthResume_textView"
+        tools:text="Nome: Lucas" />
 
     <TextView
         android:id="@+id/imc_healthResume_textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="IMC"
-        android:textSize="24sp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_healthResume_textView"
-        android:layout_marginTop="24dp"
-        />
+        tools:text="IMC: 22.5" />
 
     <TextView
         android:id="@+id/categoriaPreMensagem_imcResult_textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Sua categoria IMC é:"
-        android:textSize="24sp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imc_healthResume_textView"
-        android:layout_marginTop="24dp"
-        />
+        tools:text="Normal" />
 
     <TextView
         android:id="@+id/ideal_weight_result_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoriaPreMensagem_imcResult_textView"
-        tools:text="Seu peso ideal é:\n70.5 kg"
-        />
+        tools:text="Peso Ideal: 70.5 kg" />
 
     <TextView
         android:id="@+id/daily_expenditure_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ideal_weight_result_textView"
-        tools:text="Seu Gasto Calórico Diário (GCD) é:\n2200 kcal"
-        />
+        tools:text="GCD: 2200 kcal" />
 
     <TextView
         android:id="@+id/agua_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_expenditure_textView"
-        tools:text="Quantidade de água: "
-        />
+        tools:text="Água: 2.5 Litros" />
 
-
+    <Button
+        android:id="@+id/finalizar_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Finalizar e Voltar ao Início"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import br.edu.ifsp.scl.ads.prdm.sc3039277.ImFitPlus.data.AppDatabase
+import br.edu.ifsp.scl.ads.prdm.sc3039277.ImFitPlus.data.User
 import br.edu.ifsp.scl.ads.prdm.sc3039277.ImFitPlus.databinding.ActivityPersonalDataBinding
+import kotlinx.coroutines.launch
 import java.math.BigDecimal
 
 class PersonalDataActivity : AppCompatActivity() {
@@ -18,6 +22,32 @@ class PersonalDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPersonalDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val db = AppDatabase.getDatabase(this)
+        val userDao = db.userDao()
+
+        lifecycleScope.launch {
+            val userSalvo = userDao.getUser()
+            if (userSalvo != null) {
+                binding.nomeTextInputEditText.setText(userSalvo.nome)
+                binding.idadeTextInputEditText.setText(userSalvo.idade.toString())
+                binding.alturaTextInputEditText.setText(userSalvo.altura.toString())
+                binding.pesoTextInputEditText.setText(userSalvo.peso.toString())
+
+                if (userSalvo.sexo == "Feminino"){
+                    binding.sexoRadioGroup.check(R.id.feminino_radioButton)
+                }else{
+                    binding.sexoRadioGroup.check(R.id.masculino_radioButton)
+                }
+
+                val niveis = resources.getStringArray(R.array.niveis_atividade)
+                val posicao = niveis.indexOf(userSalvo.atividade)
+                if (posicao >= 0) {
+                    binding.nivelAtividadeSpinner.setSelection(posicao)
+                }
+                Toast.makeText(this@PersonalDataActivity, "Dados recuperados!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         val adapterAtividade = ArrayAdapter.createFromResource(
             this,
@@ -61,6 +91,21 @@ class PersonalDataActivity : AppCompatActivity() {
             if (sexoId == R.id.feminino_radioButton)
                 sexo = "Feminino"
             val imc = peso / (altura * altura)
+
+            //salvando no banco de dados
+            val userParaSalvar = User(
+                nome = nomeString,
+                idade = idade,
+                sexo = sexo,
+                altura = alturaCmDouble,
+                peso = peso,
+                atividade = atividade
+            )
+
+            lifecycleScope.launch {
+                userDao.insertUser(userParaSalvar)
+            }
+
             val intent = Intent(this, ImcResultActivity::class.java)
 
             intent.putExtra("EXTRA_NOME", nomeString)
