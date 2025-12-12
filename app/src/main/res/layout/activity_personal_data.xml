@@ -35,11 +35,11 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idade_textInputEditText"
+                android:id="@+id/nasc_textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Idade"
-                android:inputType="number"
+                android:hint="Data de Nascimento"
+                android:inputType="date"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 

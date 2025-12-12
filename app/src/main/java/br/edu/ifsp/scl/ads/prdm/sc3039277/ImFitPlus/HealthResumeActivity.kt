@@ -28,6 +28,7 @@ class HealthResumeActivity : AppCompatActivity() {
         val tmb = intentRecebido.getDoubleExtra("EXTRA_TMB", 0.0)
         val pesoIdeal = intentRecebido.getDoubleExtra("EXTRA_PESO_IDEAL", 0.0)
         val pesoAtual = intentRecebido.getDoubleExtra("EXTRA_PESO_ATUAL", 0.0)
+        val idade = intentRecebido.getIntExtra("EXTRA_IDADE", 0)
 
 
         val df = DecimalFormat("#.##")
@@ -42,6 +43,24 @@ class HealthResumeActivity : AppCompatActivity() {
         val agua = pesoAtual * 1000.0 /350
         binding.aguaTv.text = "Meta de Água: ${df.format(agua)} Litros/dia"
 
+        val fcmax = 220 - idade
+        binding.fcmaxTv.text = "Frequência cardíaca máxima: $fcmax"
+
+        val zonaLeve1 = 0.5 * fcmax
+        val zonaLeve2 = 0.6 * fcmax
+        binding.zonaLeveTv.text = "Zona leve: entre ${df.format(zonaLeve1)} e ${df.format(zonaLeve2)}"
+
+        val zonaQueima1 = 0.6 * fcmax
+        val zonaQueima2 = 0.7 * fcmax
+        binding.zonaLeveTv.text = "Zona queima de gordura: entre ${df.format(zonaQueima1)} e ${df.format(zonaQueima2)}"
+
+        val zonaAero1 = 0.7 * fcmax
+        val zonaAero2 = 0.8 * fcmax
+        binding.zonaLeveTv.text = "Zona aeróbica: entre ${df.format(zonaAero1)} e ${df.format(zonaAero2)}"
+
+        val zonaAnaero1 = 0.8 * fcmax
+        val zonaAnaero2 = 0.9 * fcmax
+        binding.zonaLeveTv.text = "Zona aeróbica: entre ${df.format(zonaAnaero1)} e ${df.format(zonaAnaero2)}"
 
         val db = AppDatabase.getDatabase(this)
 
@@ -51,7 +70,16 @@ class HealthResumeActivity : AppCompatActivity() {
                 imc = imc,
                 categoriaImc = categoria,
                 tmb = tmb, //se não tiver TMB no intent, vai salvar 0.0
-                pesoIdeal = pesoIdeal
+                pesoIdeal = pesoIdeal,
+                fcmax = fcmax,
+                zonaLeve1 = zonaLeve1,
+                zonaLeve2 = zonaLeve2,
+                zonaQueima1 = zonaQueima1,
+                zonaQueima2 = zonaQueima2,
+                zonaAero1 = zonaAero1,
+                zonaAero2 = zonaAero2,
+                zonaAnaero1 = zonaAnaero1,
+                zonaAnaero2 = zonaAnaero2
             )
             db.calcDao().insertCalc(novoCalculo)
             Toast.makeText(this@HealthResumeActivity, "Histórico salvo com sucesso!", Toast.LENGTH_SHORT).show()

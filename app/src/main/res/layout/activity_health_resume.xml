@@ -93,6 +93,66 @@
         app:layout_constraintTop_toBottomOf="@+id/daily_expenditure_textView"
         tools:text="Água: 2.5 Litros" />
 
+    <TextView
+        android:id="@+id/fcmax_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agua_tv"
+        tools:text="Frequência cardíaca máxima: 100" />
+
+    <TextView
+        android:id="@+id/zonaLeve_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fcmax_tv"
+        tools:text="Zona leve: entre 1 e 50" />
+
+    <TextView
+        android:id="@+id/zonaQueima_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zonaLeve_tv"
+        tools:text="Zona queima de gordura: entre 51 e 100" />
+
+    <TextView
+        android:id="@+id/zonaAerobica_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zonaQueima_tv"
+        tools:text="Zona aeróbica: entre 101 e 150" />
+
+    <TextView
+        android:id="@+id/zonaAnaerobica_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zonaAerobica_tv"
+        tools:text="Zona anaeróbica: entre 151 e 200" />
+
     <Button
         android:id="@+id/finalizar_button"
         android:layout_width="0dp"

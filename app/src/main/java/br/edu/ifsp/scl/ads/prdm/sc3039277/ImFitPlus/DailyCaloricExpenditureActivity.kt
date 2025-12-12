@@ -69,6 +69,7 @@ class DailyCaloricExpenditureActivity : AppCompatActivity() {
 
             intent.putExtra("EXTRA_ALTURA_M", alturaM)
             intent.putExtra("EXTRA_PESO_ATUAL", peso)
+            intent.putExtra("EXTRA_IDADE", idade)
             
 
             startActivity(intent)

@@ -11,5 +11,14 @@ data class Calc(
     val categoriaImc: String,
     val tmb: Double,
     val pesoIdeal: Double,
+    val fcmax: Int,
+    val zonaLeve1: Double,
+    val zonaLeve2: Double,
+    val zonaQueima1: Double,
+    val zonaQueima2: Double,
+    val zonaAero1: Double,
+    val zonaAero2: Double,
+    val zonaAnaero1: Double,
+    val zonaAnaero2: Double,
     val dataData: Long = System.currentTimeMillis() //data atual em milisegundos
 )
